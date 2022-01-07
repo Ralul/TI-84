@@ -2,6 +2,7 @@ import math
 
 # the display can show a maximum of 32x10 characters
 
+print("you need only two values")
 
 # User Input if the Value not unknown type zero
 vCalculationPath = ("")
