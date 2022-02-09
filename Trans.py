@@ -122,8 +122,8 @@ elif (n2IsDefined and d2IsDefined and iIsDefined == True):
 elif (n1IsDefined and d1IsDefined and iIsDefined == True):
     n2 = n1 / i
     n2CalculationPath = ("n2 = n1 / i")
-    d2 = d1 / i
-    d2CalculationPath = ("d2 = d1 / i")
+    d2 = d1 * i
+    d2CalculationPath = ("d2 = d1 * i")
 
 # n1 + i   (11)
 elif (n1IsDefined and iIsDefined == True):
