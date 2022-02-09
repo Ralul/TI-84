@@ -4,6 +4,7 @@ import math
 
 
 # User Input if the Value not unknown type zero
+print("if I biger 1 goes slow")
 n1CalculationPath = ("")
 n2CalculationPath = ("")
 d1CalculationPath = ("")
