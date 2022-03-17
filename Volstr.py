@@ -36,6 +36,8 @@ else:
     VPTIsDefined = False
 
 # Select the Corect Prozess with an IF ELSE statement
+# V A T Q
+
 # V and t       (1)
 # v and A       (2)
 # v and t and A (3)
