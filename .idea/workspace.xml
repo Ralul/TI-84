@@ -120,10 +120,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.PistForc" />
-      <item itemvalue="Python.ISO-286" />
       <item itemvalue="Python.HelloWorld" />
+      <item itemvalue="Python.ISO-286" />
+      <item itemvalue="Python.PistForc" />
+      <item itemvalue="Python.Unnamed" />
     </list>
     <recent_temporary>
       <list>
