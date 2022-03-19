@@ -1,7 +1,7 @@
 #List
 #tolerance grades
 
-# Nominal_range_ , IT grades
+# Nominal_range , IT grades
 def ToleranceIs (Nominal,IT):
 
     if(Nominal <= 3):
@@ -92,13 +92,73 @@ def ToleranceIs (Nominal,IT):
     print ("Toleranc is: ",Tolerance[Nominal_range][IT+1],"µm")
     return Tolerance[Nominal_range][IT+1]
 
+def FundamentalDeviationIs (Nominal, IT, ToleranceClass)
+
+    if (Nominal <= 3):
+        Nominal_range = 0
+
+    elif (Nominal <= 6):
+        Nominal_range = 1
+
+    elif (Nominal <= 10):
+        Nominal_range = 2
+
+    elif (Nominal <= 18):
+        Nominal_range = 3
+
+    elif (Nominal <= 30):
+        Nominal_range = 4
+
+    elif (Nominal <= 50):
+        Nominal_range = 5
+
+    elif (Nominal <= 80):
+        Nominal_range = 6
+
+    elif (Nominal <= 120):
+        Nominal_range = 7
+
+    elif (Nominal <= 180):
+        Nominal_range = 8
+
+    elif (Nominal <= 250):
+        Nominal_range = 9
+
+    elif (Nominal <= 315):
+        Nominal_range = 10
+
+    elif (Nominal <= 400):
+        Nominal_range = 11
+
+    elif (Nominal <= 500):
+        Nominal_range = 12
+
+    elif (Nominal <= 630):
+        Nominal_range = 13
+
+    elif (Nominal <= 800):
+        Nominal_range = 14
+
+    elif (Nominal <= 1000):
+        Nominal_range = 15
+
+    elif (Nominal <= 1250):
+        Nominal_range = 16
+
+    elif (Nominal <= 1600):
+        Nominal_range = 17
+
+    elif (Nominal <= 2000):
+        Nominal_range = 19
+
+    elif (Nominal <= 3150):
+        Nominal_range = 20
+
+
+
 
 Nominal = float(input("Nominal:"))
 IT_Toleranc = int(input("IT_Toleranc:"))
 
 i= ToleranceIs(Nominal,IT_Toleranc)
-
-
-print (i)
-
 
