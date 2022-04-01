@@ -50,7 +50,10 @@ else:
 # Side b and Side c   (5)
 # Side b and Angel A  (6)
 # Side b and Angel B  (7)
-# Angel A and Angel B (8)
+# Side c and Angel A  (8*)
+# Side c and Angel B  (9*)
+# Angel A and Angel B (10)
+
 
 # Side a and Side b  (1)
 if (side_a_isDefined and side_b_isDefined == True):
@@ -101,7 +104,19 @@ elif (side_b_isDefined and angle_B_isDefined):
     side_c = side_b / math.sin(math.radians(angel_B))
     print("method (7)")
 
-# Angel A and Angel B (8)
+# Side c and Angel A  (8*)
+elif (side_c_isDefined and angle_A_isDefined == True):
+    angel_B = 90 - angel_A
+    side_a = side_c * math.sin(math.radians(angel_A))
+    side_b = side_c * math.cos(math.radians(angel_A))
+
+# Side c and Angel B  (9*)
+elif (side_c_isDefined and angle_B_isDefined == True):
+    angel_A = 90 - angel_B
+    side_a = side_c * math.cos(math.radians(angel_B))
+    side_b = side_c * math.sin(math.radians(angel_B))
+
+# Angel A and Angel B (10)
 elif (angle_A_isDefined and angle_B_isDefined == True):
     print("the triangle is not defined")
 
