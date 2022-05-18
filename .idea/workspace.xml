@@ -42,7 +42,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.Trigon">
+  <component name="RunManager" selected="Python.ISO-286">
     <configuration name="HelloWorld" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TI-84" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,8 +157,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Trigon" />
         <item itemvalue="Python.ISO-286" />
+        <item itemvalue="Python.Trigon" />
         <item itemvalue="Python.HelloWorld" />
         <item itemvalue="Python.PistForc" />
       </list>
@@ -174,16 +174,5 @@
       <updated>1642065456974</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ISO-286.py</url>
-          <line>4</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
