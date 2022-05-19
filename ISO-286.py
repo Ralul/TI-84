@@ -93,36 +93,63 @@ def ToleranceIs (IT,RangeNumber):
 
     return Tolerance[RangeNumber][IT+1]
 
-def FundamentalDeviationIs (ToleranceClass,IT,RangeNumber):
+def FundamentalDeviationIs (ToleranceClass,IT,RangeNumber,Tolerance):
 
     if (ToleranceClass == "d"):
         dataString = [-20,-30,-40,-50,-65,-80,-100,-120,-145,-170,-190,-210,-230,-260,-290,-320,-350,-390,-430,-480,-520]
     elif (ToleranceClass == "e"):
-        dataString = [-14,-20,-25,-32,-32,-40,-40,-50,-50,-60,-60,-72,-72,-85,-85,-85,-100,-100,-100,-110,-110,-125,-125,-135,-135,-145,-145,-160,-160,-170,-170,-195,-195,-220,-220,-240,-240,-260,-260,-290,-290]
+        dataString = [-14,-20,-25,-32,-40,-50,-60,-72,-85,-100,-110,-125,-135,-145,-160,-170,-195,-220,-240,-260,-290]
     elif (ToleranceClass == "f"):
-        dataString = [-6,-10,-13,-16,-16,-20,-20,-25,-25,-30,-30,-36,-36,-43,-43,-43,-50,-50,-50,-56,-56,-62,-62,-68,-68,-76,-76,-80,-80,-86,-86,-98,-98,-110,-110,-120,-120,-130,-130,-145,-145]
+        dataString = [-6,-10,-13,-16,-20,-25,-30,-36,-43,-50,-56,-62,-68,-76,-80,-86,-98,-110,-120,-130,-145]
     elif (ToleranceClass == "g"):
-        dataString = [-2,-4,-5,-6,-6,-7,-7,-9,-9,-10,-10,-12,-12,-14,-14,-14,-15,-15,-15,-17,-17,-18,-18,-20,-20,-22,-22,-24,-24,-26,-26,-28,-28,-30,-30,-32,-32,-34,-34,-38,-38]
+        dataString = [-2,-4,-5,-6,-7,-9,-10,-12,-14,-15,-17,-18,-20,-22,-24,-26,-28,-30,-32,-34,-38]
     elif (ToleranceClass == "h"):
-        dataString = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        dataString = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     elif (ToleranceClass == "js"):
-        dataString = []
-    elif (ToleranceClass == "k" & IT >= 4 & IT <= 7):
+        return (Tolerance /2)*-1
+
+    elif (ToleranceClass == "k" and IT >= 4 & IT <= 7):
         # IT 4 to 7
-        dataString = [0,1,1,1,1,2,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,4,4,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        dataString = [0,1,1,1,2,2,2,3,3,4,4,4,5,0,0,0,0,0,0,0,0]
 
     elif (ToleranceClass == "k"):
-        dataString = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        dataString = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     elif (ToleranceClass == "m"):
-        dataString = [2,4,6,7,7,8,8,9,9,11,11,13,13,15,15,15,17,17,17,20,20,21,21,23,23,26,26,30,30,34,34,40,40,48,48,58,58,68,68,76,76]
-    elif (ToleranceClass == "e"):
-        dataString = [4,8,10,12,12,15,15,17,17,20,20,23,23,27,27,27,31,31,31,34,34,37,37,40,40,44,44,50,50,56,56,66,66,78,78,92,92,110,110,135,135]
-    elif (ToleranceClass == "e"):
-        dataString = [6,12,15,18,18,22,22,26,26,32,32,37,37,43,43,43,50,50,50,56,56,62,62,68,68,78,78,88,88,100,100,120,120,140,140,170,170,195,195,240,240]
+        dataString = [2,4,6,7,8,9,11,13,15,17,20,21,23,26,30,34,40,48,58,68,76]
+    elif (ToleranceClass == "n"):
+        dataString = [4,8,10,12,15,17,20,23,27,31,34,37,40,44,50,56,66,78,92,110,135]
+    elif (ToleranceClass == "p"):
+        dataString = [6,12,15,18,22,26,32,37,43,50,56,62,68,78,88,100,120,140,170,195,240]
+    elif (ToleranceClass == "r"):
+        dataString = [10,15,19,23,28,34,41,51,63,77,94,108,126,150,175,210,250,300,370,440,550]
+    elif (ToleranceClass == "s"):
+        dataString = [14,19,23,28,35,43,53,71,92,122,158,190,232,280,340,430,520,640,820,1000,1250]
 
-    FundamentalDeviation = dataString[RangeNumber]
 
-    return FundamentalDeviation
+    return dataString[RangeNumber]
+
+def LimitIs (Nominal,ToleranceClass,FundamentalDeviation,Tolerance):
+
+    es = 0
+    ei = 0
+
+    if(ToleranceClass == "d" or ToleranceClass == "e" or ToleranceClass == "f" or ToleranceClass == "g" or ToleranceClass == "h"):
+
+        ei = FundamentalDeviation
+        es = FundamentalDeviation - Tolerance
+
+    elif (ToleranceClass == "k" or ToleranceClass == "m" or ToleranceClass == "n" or ToleranceClass == "p" or ToleranceClass == "r" or ToleranceClass == "s"):
+
+        es = FundamentalDeviation
+        ei = FundamentalDeviation + Tolerance
+
+    elif (ToleranceClass == "js"):
+        ei = FundamentalDeviation
+        es = FundamentalDeviation + Tolerance
+
+
+    return (es,ei)
+
 
 Nominal = float(input("Nominal:"))                  #[Ø50]
 IT_Tolerance = int(input("IT_Toleranc:"))           #[3]
@@ -131,12 +158,13 @@ ToleranceClass = str(input("ToleranceClass:"))      #[h]
 
 RangeNumber = RangeIs(Nominal)
 Tolerance = ToleranceIs(IT_Tolerance,RangeNumber)
-FundamentalDeviation = FundamentalDeviationIs(ToleranceClass,IT_Tolerance,RangeNumber)
-
+FundamentalDeviation = FundamentalDeviationIs(ToleranceClass,IT_Tolerance,RangeNumber,Tolerance)
+Limits = LimitIs(Nominal,ToleranceClass,FundamentalDeviation,Tolerance)
 
 print ("RangeNumber:", RangeNumber)
 print ("TolerancAsMue:", Tolerance)
 print ("FundamentalDeviation:", FundamentalDeviation)
-
+print ("Lower limit deviation ei:",Limits[0])
+print ("Upper limit deviation es:",Limits[1])
 
 
