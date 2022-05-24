@@ -136,40 +136,38 @@ def FundamentalDeviationFromHoleIs (ToleranceClass,IT,RangeNumber,Tolerance):
         Delta = [0,6,7,9,12,14,16,16,19,19,23,23,23,26,26,26,29,29,32,32]
 #hole value are false
     if (ToleranceClass == "D"):
-        dataString = [20,30,40,50,65,80,100,120,145,170,190,210,230,260,290,320,350,390,430,480,520]
+        dataString = [20,30,40,50,65,80,100,100,120,120,145,145,145,170,170,170,190,190,210,210]
     elif (ToleranceClass == "E"):
-        dataString = [14,20,25,32,40,50,60,72,85,100,110,125,135,145,160,170,195,220,240,260,290]
+        dataString = [14,20,25,32,40,50,60,60,72,72,85,85,85,100,100,100,110,110,125,125]
     elif (ToleranceClass == "F"):
-        dataString = [6,10,13,16,-20,-25,-30,-36,-43,-50,-56,-62,-68,-76,-80,-86,-98,-110,-120,-130,-145]
+        dataString = [6,10,13,16,20,25,30,30,36,36,43,43,43,50,50,50,56,56,62,62]
     elif (ToleranceClass == "G"):
-        dataString = [2,4,5,6,7,9,10,12,14,15,17,18,20,22,24,26,28,30,32,34,38]
+        dataString = [2,4,5,6,7,9,10,10,12,12,14,14,14,15,15,15,17,17,18,18]
     elif (ToleranceClass == "H"):
-        dataString = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        dataString = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     elif (ToleranceClass == "JS"):
         return (Tolerance /2)*-1
 
     elif (ToleranceClass == "K" and IT >= 3 and IT <= 8):
-        dataString = [0,-1,-1,-1,-2,-2,-2,-3,-3,-4,-4,-4,-5,0,0,0,0,0,0,0,0]
+        dataString = [0,-1,-1,-1,-2,-2,-2,-2,-3,-3,-3,-3,-3,-4,-4,-4,-4,-4,-4,-4]
         return dataString[RangeNumber] + Delta[RangeNumber]
 
     elif (ToleranceClass == "M" and IT >= 3 and IT <= 8):
-        dataString = [-2,-4,-6,-7,-8,-9,-11,-13,-15,-17,-20,-21,-23,-26,-30,-34,-40,-48,-58,-68,-76]
+        dataString = [-2,-4,-6,-7,-8,-9,-11,-13,-13,-15,-15,-15,-17,-17,-17,-20,-20,-21,-21]
         return dataString[RangeNumber] + Delta[RangeNumber]
     elif (ToleranceClass == "M" and IT >= 9):
-        dataString = [-2,-4,-6,-7,-8,-9,-11,-13,-15,-17,-20,-21,-23,-26,-30,-34,-40,-48,-58,-68,-76]
+        dataString = [-2,-4,-6,-7,-8,-9,-11,-13,-13,-15,-15,-15,-17,-17,-17,-20,-20,-21,-21]
 
     elif (ToleranceClass == "N" and IT >= 3 and IT <= 8):
-        dataString = [-4,-8,-10,-12,-15,-17,-20,-23,-27,-31,-34,-37,-40,-44,-50,-56,-66,-78,-92,-110,-135]
+        dataString = [-4,-8,-10,-12,-15,-17,-20,-20,-23,-23,-27,-27,-27,-31,-31,-31,-34,-34,-37,-37]
         return dataString[RangeNumber] + Delta[RangeNumber]
     elif (ToleranceClass == "N" and IT >= 9):
-        dataString = [-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        dataString = [-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
     elif (ToleranceClass == "P"):
-        dataString = [-6,-12,-15,-18,-22,-26,-32,-37,-43,-50,-53,-62,-68,-78,-88,-100,-120,-140,-170,-195,-240]
+        dataString = [-6-12-15-18-22-26-32-32-37-37-43-43-43-50-50-50-53-53-62-62]
     elif (ToleranceClass == "R"):
-        dataString = [-10,-15,-19,-23,-28,-34,-41,-51,-63,-77,-94,-108,-126,-150,-175,-210,-250,-300,-370,-440,-550]
-    elif (ToleranceClass == "S"):
-        dataString = [-14,-19,-23,-28,-35,-43,-53,-71,-92,-122,-158,-190,-232,-280,-340,-430,-520,-640,-820,-1000,-1250]
+        dataString = [-10,-11,-13,-16,-20,-25,-30,-32,-38,-41,-48,-50,-53,-60,-63,-67,-74,-78,-87,-93]
 
     return dataString[RangeNumber]
 
@@ -250,4 +248,3 @@ print ("TolerancHoleAsMue:", ToleranceHole)
 print ("FundamentalDeviationFromHole:", FundamentalDeviationFromHole)
 print ("Lower limit deviation EI:",LimitFromHole[0])
 print ("Upper limit deviation ES:",LimitFromHole[1])
-
