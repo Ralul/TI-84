@@ -82,7 +82,6 @@ def LimitFromShaftIs (Nominal,ToleranceClass,FundamentalDeviation,Tolerance):
 
     return (es,ei)
 
-
 Nominal = float(input("Nominal:"))                  #[Ø50]
 
 IT_ToleranceShaft = int(input("IT_ToleranceShaft:"))           #[3]
