@@ -134,7 +134,7 @@ def FundamentalDeviationFromHoleIs (ToleranceClass,IT,RangeNumber,Tolerance):
         Delta = [0,4,6,7,8,9,11,11,13,13,15,15,15,17,17,17,20,20,21,21]
     elif (IT == 8):
         Delta = [0,6,7,9,12,14,16,16,19,19,23,23,23,26,26,26,29,29,32,32]
-#hole value are false
+
     if (ToleranceClass == "D"):
         dataString = [20,30,40,50,65,80,100,100,120,120,145,145,145,170,170,170,190,190,210,210]
     elif (ToleranceClass == "E"):
@@ -165,7 +165,7 @@ def FundamentalDeviationFromHoleIs (ToleranceClass,IT,RangeNumber,Tolerance):
         dataString = [-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
     elif (ToleranceClass == "P"):
-        dataString = [-6-12-15-18-22-26-32-32-37-37-43-43-43-50-50-50-53-53-62-62]
+        dataString = [-6,-12,-15,-18,-22,-26,-32,-32,-37,-37,-43,-43,-43,-50,-50,-50,-53,-53,-62,-62]
     elif (ToleranceClass == "R"):
         dataString = [-10,-11,-13,-16,-20,-25,-30,-32,-38,-41,-48,-50,-53,-60,-63,-67,-74,-78,-87,-93]
 
@@ -178,17 +178,17 @@ def LimitFromShaftIs (Nominal,ToleranceClass,FundamentalDeviation,Tolerance):
 
     if(ToleranceClass == "d" or ToleranceClass == "e" or ToleranceClass == "f" or ToleranceClass == "g" or ToleranceClass == "h"):
 
-        ei = FundamentalDeviation
-        es = FundamentalDeviation - Tolerance
+        ei = FundamentalDeviation - Tolerance
+        es = FundamentalDeviation
 
     elif (ToleranceClass == "k" or ToleranceClass == "m" or ToleranceClass == "n" or ToleranceClass == "p" or ToleranceClass == "r" or ToleranceClass == "s"):
 
-        es = FundamentalDeviation
-        ei = FundamentalDeviation + Tolerance
+        es = FundamentalDeviation + Tolerance
+        ei = FundamentalDeviation
 
     elif (ToleranceClass == "js"):
-        ei = FundamentalDeviation
-        es = FundamentalDeviation + Tolerance
+        ei = FundamentalDeviation + Tolerance
+        es = FundamentalDeviation
 
 
     return (es,ei)
@@ -198,20 +198,19 @@ def LimitFromHoleIs (Nominal,ToleranceClass,FundamentalDeviation,Tolerance):
     ES = 0
     EI = 0
 
-    if(ToleranceClass == "D" or ToleranceClass == "E" or ToleranceClass == "F" or ToleranceClass == "G"):
-
-        ES = FundamentalDeviation
-        EI = FundamentalDeviation - Tolerance
-
-    elif (ToleranceClass == "H" and ToleranceClass == "K" or ToleranceClass == "M" or ToleranceClass == "N" or ToleranceClass == "P" or ToleranceClass == "R" or ToleranceClass == "S"):
-
-        EI = FundamentalDeviation
+    if (ToleranceClass == "H" or ToleranceClass == "D" or ToleranceClass == "E" or ToleranceClass == "F" or ToleranceClass == "G"):
+ 
         ES = FundamentalDeviation + Tolerance
+        EI = FundamentalDeviation
+
+    elif (ToleranceClass == "K" or ToleranceClass == "M" or ToleranceClass == "N" or ToleranceClass == "P" or ToleranceClass == "R" or ToleranceClass == "S"):
+
+        EI = FundamentalDeviation - Tolerance
+        ES = FundamentalDeviation
 
     elif (ToleranceClass == "JS"):
         EI = FundamentalDeviation
         ES = FundamentalDeviation + Tolerance
-
 
     return (ES,EI)
 
@@ -240,11 +239,11 @@ print ("RangeNumber:", RangeNumber)
 print ("Shaft----------------")
 print ("TolerancShaftAsMue:", ToleranceShaft)
 print ("FundamentalDeviationFromShaft:", FundamentalDeviationFromShaft)
-print ("Lower limit deviation ei:",LimitFromShaft[0])
-print ("Upper limit deviation es:",LimitFromShaft[1])
+print ("Lower limit deviation ei:",LimitFromShaft[1])
+print ("Upper limit deviation es:",LimitFromShaft[0])
 
 print ("Hole-----------------")
 print ("TolerancHoleAsMue:", ToleranceHole)
 print ("FundamentalDeviationFromHole:", FundamentalDeviationFromHole)
-print ("Lower limit deviation EI:",LimitFromHole[0])
-print ("Upper limit deviation ES:",LimitFromHole[1])
+print ("Lower limit deviation EI:",LimitFromHole[1])
+print ("Upper limit deviation ES:",LimitFromHole[0])
