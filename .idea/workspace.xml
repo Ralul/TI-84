@@ -42,7 +42,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.ISO286S">
+  <component name="RunManager" selected="Python.ISO286H">
     <configuration name="HelloWorld" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TI-84" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -179,11 +179,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ISO286S" />
         <item itemvalue="Python.ISO286H" />
+        <item itemvalue="Python.ISO286S" />
+        <item itemvalue="Python.HelloWorld" />
         <item itemvalue="Python.ISO-286" />
         <item itemvalue="Python.Trigon" />
-        <item itemvalue="Python.HelloWorld" />
       </list>
     </recent_temporary>
   </component>

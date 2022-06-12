@@ -102,13 +102,20 @@ def LimitFromHoleIs(Nominal, ToleranceClass, FundamentalDeviation, Tolerance):
 
     return (ES, EI)
 
+String = input("gib ein")
+Nominal = String
+K = ''
+# loop for all characters
+for ele in String:
+    if ele.isdigit():
+        String = String.replace(ele, K)
+print("The resultant string : " + str(String))
+x = Nominal.rsplit(String)
+print(x)
 
-Nominal = float(input("Nominal:"))                  #[Ø50]
-
-
-IT_ToleranceHole = int(input("IT_ToleranceHole:"))           #[8]
-ToleranceClassHole = str(input("ToleranceClassHole:"))      #[JS]
-
+Nominal = int(x[0])
+IT_ToleranceHole = int(x[1])
+ToleranceClassHole = String
 RangeNumber = RangeIs(Nominal)
 
 #Calculate Hole
@@ -116,10 +123,10 @@ ToleranceHole = ToleranceIs(IT_ToleranceHole,RangeNumber)
 FundamentalDeviationFromHole = FundamentalDeviationFromHoleIs(ToleranceClassHole,IT_ToleranceHole,RangeNumber,ToleranceHole)
 LimitFromHole = LimitFromHoleIs(Nominal,ToleranceClassHole,FundamentalDeviationFromHole,ToleranceHole)
 
-print ("RangeNumber:", RangeNumber)
 
 print ("Hole-----------------")
-print ("TolerancHoleAsMue:", ToleranceHole)
-print ("FundamentalDeviationFromHole:", FundamentalDeviationFromHole)
-print ("Lower limit deviation EI:",LimitFromHole[1])
-print ("Upper limit deviation ES:",LimitFromHole[0])
+print ("Toleranz in Mü:", ToleranceHole)
+
+print ("Oberes Abmass  ES:",LimitFromHole[0])
+print ("Unteres Abmass EI:",LimitFromHole[1])
+

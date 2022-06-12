@@ -82,10 +82,20 @@ def LimitFromShaftIs (Nominal,ToleranceClass,FundamentalDeviation,Tolerance):
 
     return (es,ei)
 
-Nominal = float(input("Nominal:"))                  #[Ø50]
+String = input("gib ein")
+Nominal = String
+K = ''
+# loop for all characters
+for ele in String:
+    if ele.isdigit():
+        String = String.replace(ele, K)
+print("The resultant string : " + str(String))
+x = Nominal.rsplit(String)
+print(x)
 
-IT_ToleranceShaft = int(input("IT_ToleranceShaft:"))           #[3]
-ToleranceClassShaft = str(input("ToleranceClassShaft:"))      #[h]
+Nominal = int(x[0])
+IT_ToleranceShaft = int(x[1])
+ToleranceClassShaft = String
 
 RangeNumber = RangeIs(Nominal)
 
@@ -94,9 +104,9 @@ ToleranceShaft = ToleranceIs(IT_ToleranceShaft,RangeNumber)
 FundamentalDeviationFromShaft = FundamentalDeviationFromShaftIs(ToleranceClassShaft,IT_ToleranceShaft,RangeNumber,ToleranceShaft)
 LimitFromShaft = LimitFromShaftIs(Nominal,ToleranceClassShaft,FundamentalDeviationFromShaft,ToleranceShaft)
 
-print ("RangeNumber:", RangeNumber)
-print ("Shaft----------------")
-print ("TolerancShaftAsMue:", ToleranceShaft)
-print ("FundamentalDeviationFromShaft:", FundamentalDeviationFromShaft)
-print ("Lower limit deviation ei:",LimitFromShaft[1])
-print ("Upper limit deviation es:",LimitFromShaft[0])
+print ("Welle----------------")
+print ("Toleranz in Mü:", ToleranceShaft)
+
+print ("Oberes Abmass  es:",LimitFromShaft[0])
+print ("Unteres Abmass ei:",LimitFromShaft[1])
+
