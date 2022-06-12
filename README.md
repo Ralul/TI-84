@@ -1,7 +1,9 @@
 Zu erst musst du die Folgeenden Programme herunterladen und auf deinem Rechner hochladen.
+
     *ISO286B.py
     *ISO286C.py
     *ISO286W.py
+    
 Hier kannst du TI Connect CE herunter laden dies benögits du um Programe von deinem PC auf dein Rechner zu üertragen
 (https://education.ti.com/download/en/ed-tech/13312F7CEC074A2DAFD7EE5646129839/37C7F40B2BF34112B241535398308284/TIConnectCE-5.6.3.2278.exe)
 ![](ISO286doc/StartScreen.png)
