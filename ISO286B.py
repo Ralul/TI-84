@@ -110,7 +110,6 @@ for ele in String:
     if ele.isdigit():
         String = String.replace(ele, K)
 x = Nominal.rsplit(String)
-print(x)
 
 Nominal = int(x[0])
 IT_ToleranceHole = int(x[1])
