@@ -15,7 +15,7 @@ Zuerst kannst du mit dem Programm ISO286B die Abmasse der Bohrung berechnen. Dan
 Damit du zwischen Gross- und Kleinbuchstaben wechseln kannst, musst du einfach zweimal die "alpha" Taste drücken.
 Links oben siehst du dann auch einen Hinweis welcher Modus aktiv ist.
 
-![](ISO286doc/Gross Klein Schreibung.jpg)
+![](ISO286doc/GrossKleinSchreibung.jpg)
 
 # Beispiel:
     Bohrung:    Ø30H6
