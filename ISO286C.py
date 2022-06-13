@@ -23,5 +23,5 @@ if (HU >= 0 and MU >= 0):
 
 if (HS >= 0 and HU >= 0):
     print("Übergagspassung")
-    print ("Höchstübermass MU:", HS)
-    print ("Mindestspiel MS:", HU)
+    print ("Höchstübermass HU:", HU)
+    print ("Höchstspiel HS:", HS)
