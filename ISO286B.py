@@ -74,9 +74,15 @@ def FundamentalDeviationFromHoleIs (ToleranceClass,IT,RangeNumber,Tolerance):
         dataString = [-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
     elif (ToleranceClass == "P"):
-        dataString = [-6,-12,-15,-18,-22,-26,-32,-32,-37,-37,-43,-43,-43,-50,-50,-50,-53,-53,-62,-62]
+
+        dataString = [-6,-12,-15,-18,-22,-26,-32,-32,-37,-37,-43,-43,-43,-50,-50,-50,-56,-56,-62,-62]
+        if (IT <= 7):
+            return dataString[RangeNumber] + Delta[RangeNumber]
+
     elif (ToleranceClass == "R"):
-        dataString = [-10,-11,-13,-16,-20,-25,-30,-32,-38,-41,-48,-50,-53,-60,-63,-67,-74,-78,-87,-93]
+        dataString = [-10,-15,-19,-23,-28,-34,-41,-43,-51,-54,-63,-65,-68,-77,-80,-84,-94,-98,-108,-114]
+        if (IT <= 7):
+            return dataString[RangeNumber] + Delta[RangeNumber]
 
     return dataString[RangeNumber]
 
