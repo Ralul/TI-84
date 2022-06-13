@@ -76,8 +76,8 @@ def LimitFromShaftIs (Nominal,ToleranceClass,FundamentalDeviation,Tolerance):
         ei = FundamentalDeviation
 
     elif (ToleranceClass == "js"):
-        ei = FundamentalDeviation + Tolerance
-        es = FundamentalDeviation
+        es = FundamentalDeviation + Tolerance
+        ei = FundamentalDeviation
 
 
     return (es,ei)
