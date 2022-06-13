@@ -1,8 +1,8 @@
-ES = int(input("ES:"))
-EI = int(input("EI:"))
+ES = float(input("ES:"))
+EI = float(input("EI:"))
 
-es = int(input("es"))
-ei = int(input("ei"))
+es = float(input("es"))
+ei = float(input("ei"))
 
 #Spielpassung
 HS = ES - ei
