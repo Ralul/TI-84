@@ -36,4 +36,4 @@ Damit wird dir gezeigt ob es sich um eine Spielpassung, Übergangspassung oder e
 
 ![](ISO286doc/Berechung.png)
 
-**_Die Programme sind noch in Entwickung und wurden noch nicht gepenetrationstestet._** 
+**_Die Programme wurden von Jaink313 geteste._** 
