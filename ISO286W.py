@@ -41,6 +41,8 @@ def FundamentalDeviationFromShaftIs (ToleranceClass,IT,RangeNumber,Tolerance):
     elif (ToleranceClass == "js"):
         return (Tolerance /2)*-1
 
+    #add j as toleranceclass 
+
     elif (ToleranceClass == "k" and IT >= 4 & IT <= 7):
         # IT 4 to 7
         dataString = [0,1,1,1,2,2,2,2,3,3,3,3,3,4,4,4,4,4,4,4]
